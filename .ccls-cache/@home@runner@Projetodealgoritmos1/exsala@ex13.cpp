@@ -8,9 +8,13 @@ int main()
     contato x = inicializar("Max", "Galpão do lider", 100);
     imprimir(x);
 
+    checa_contato("Max", &x);
+    
     altera_nome(&x, "Maximilien");
     imprimir(x);
 
+    checa_contato("Max", &x);
+    
     altera_num(&x, 101);
     imprimir(x);
 
@@ -41,8 +45,8 @@ void altera_num(contato* c, int novo_num){
     return;
 }
 
-void checa_contato(char* nome_alvo, contato c){
-    if(c.nome == nome_alvo){
+void checa_contato(char* nome_alvo, contato* c){
+    if(c->nome == nome_alvo){
         cout << "Existente." << endl;
     }
     else{
